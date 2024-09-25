@@ -115,7 +115,7 @@ uint16_t DFRobot_SHT20::readValue(byte cmd)
     byte toRead;
     byte counter;
     for(counter = 0, toRead = 0 ; counter < MAX_COUNTER && toRead != 3; counter++){
-        delay(DELAY_INTERVAL);
+        delay(200);
         toRead = _pWire->requestFrom(_addr, (uint8_t)3);
     }
     if(counter == MAX_COUNTER){
